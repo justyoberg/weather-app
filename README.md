@@ -1,15 +1,3 @@
-# 🚀 Welcome to your new awesome project!
+# [Live Preview](https://justyoberg.github.io/weather-app)
 
-This project has been created using **webpack-cli**, you can now run
-
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
-
-to bundle your application
+Simple weather app to practice async/await features in JS
