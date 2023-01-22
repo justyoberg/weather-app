@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  background: url(./imgs/rain.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 9fr 1fr;
+  gap: 15px;
+  width: 50%;
+  height: 60%;
+}
+
+input,
+button {
+  font-size: 1em;
+}
+
+input {
+  flex: 3;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  outline: none;
+}
+
+button {
+  flex: 1;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background-color: rgb(109, 177, 204);
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(84, 143, 167);
+  transition: 0.2s;
+}
+
+button:active {
+  box-shadow: 0 0 15px inset black;
+}
+
+.left-panel,
+.search,
+.info {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.877);
+}
+
+.search {
+  display: flex;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+.info {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+
