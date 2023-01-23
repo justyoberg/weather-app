@@ -17,30 +17,12 @@ const switchTempBtn = document.querySelector(".temp-btn");
 let celsius = false;
 let currentObj;
 
-searchBtn.addEventListener("click", async () => {
+searchBtn.addEventListener("click", () => getSearchData());
 
-    if (!search.value) return;
-    const weather = await getWeather(search.value);
-    updateCurrentObj(weather);
-    if (weather == null) search.classList.add("error");
-    else {
-      search.classList.remove("error");
-      updatePage(weather)
-    };
-
-});
-
-search.addEventListener("keyup", async (event) => {
+search.addEventListener("keyup", (event) => {
 
   if (event.key === "Enter") {
-    if (!search.value) return;
-    const weather = await getWeather(search.value);
-    updateCurrentObj(weather);
-    if (weather == null) search.classList.add("error");
-    else {
-      search.classList.remove("error");
-      updatePage(weather)
-    };
+    getSearchData();
   }
 
 });
@@ -83,6 +65,19 @@ export const updatePage = (weather) => {
       }
 
 }
+
+const getSearchData = async () => {
+
+  if (!search.value) return;
+  const weather = await getWeather(search.value);
+  updateCurrentObj(weather);
+  if (weather == null) search.classList.add("error");
+  else {
+    search.classList.remove("error");
+    updatePage(weather)
+  };
+
+};
 
 export const updateCurrentObj = (obj) => {
   currentObj = obj;
